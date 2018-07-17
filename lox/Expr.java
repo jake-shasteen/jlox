@@ -60,5 +60,5 @@ abstract class Expr {
     final Expr right;
   }
 
-  abstract <R> accept(Visitor<R> visitor);
+  abstract <R> R accept(Visitor<R> visitor);
 }
