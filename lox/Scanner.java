@@ -54,6 +54,15 @@ class Scanner {
     	  }
     	  break;
 
+      case ' ':
+      case '\r':
+      case '\t':
+    	  // ignore whitespace
+    	  break;
+      case '\n':
+    	  line++;
+    	  break;
+
       default:
         Lox.error(line, "Unexpected character " + c);
       break;
