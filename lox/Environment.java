@@ -18,4 +18,14 @@ class Environment {
     throw new RuntimeError(variableNameToken,
       "Undefined variable " + variableNameToken.lexeme + " on line " + variableNameToken.line + "'.'");
   }
+
+  void assign(Token name, Object value) {
+    if (values.containsKey(name.lexeme)) {
+      values.put(name.lexeme, value);
+      return;
+    }
+
+    throw new RuntimeError(name,
+      "Undefined variable " + name.lexeme + ".");
+  }
 }
